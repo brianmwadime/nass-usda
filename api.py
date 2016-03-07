@@ -10,8 +10,8 @@ class USDAApi(object):
     """USDA National Agricultural Statistics Service API wrapper class.
     :param key: API key
     Usage::
-      >>> from nass import USDAApi
-      >>> api = USDAApi('api key')
+      >>> from nassusda import USDAApi
+      >>> api = USDAApi('APIKEY')
     """
 
     BASE_URL = 'http://quickstats.nass.usda.gov/api'
@@ -112,8 +112,8 @@ class USDAApi(object):
         :return: Possible values
         :rtype: list
         Usage::
-          >>> from nass import NassApi
-          >>> api = NassApi('api key')
+          >>> from nassusda import USDAApi
+          >>> api = USDAApi('APIKEY')
           >>> api.param_values('source_desc')
           >>> ['CENSUS', 'SURVEY']
         """
@@ -121,13 +121,13 @@ class USDAApi(object):
 
     def query(self):
         """Create a query used for filtering.
-        :return: :class:`Query <nass.query.Query>` object
-        :rtype: nass.query.Query
+        :return: :class:`Query <nassusda.query.Query>` object
+        :rtype: nassusda.query.Query
         Usage::
-          >>> from nass import NassApi
-          >>> api = NassApi('api key')
+          >>> from usda import USDAApi
+          >>> api = USDAApi('api key')
           >>> q = api.query()
-          >>> q.filter('commodity_desc', 'CORN').filter('year', 2012)
+          >>> q.filter('sector_desc', 'CROPS').filter('year', 2016)
           >>> q.count()
           141811
         """
@@ -136,8 +136,8 @@ class USDAApi(object):
     def count_query(self, query):
         """Return the row count of a given query.
         This is called internally by :meth:`Query.count()
-        <nass.query.Query.count>`, try not to call it directly.
-        :param query: the :class:`Query <nass.query.Query>` object
+        <nassusda.query.Query.count>`, try not to call it directly.
+        :param query: the :class:`Query <nassusda.query.Query>` object
         :return: The number of rows in the result
         :rtype: int
         """
@@ -147,8 +147,8 @@ class USDAApi(object):
     def call_query(self, query):
         """Return the result of a given query.
         This is called internally by :meth:`Query.execute()
-        <nass.query.Query.execute>`, try not to call it directly.
-        :param query: the :class:`Query <nass.query.Query>` object
+        <nassusda.query.Query.execute>`, try not to call it directly.
+        :param query: the :class:`Query <nassusda.query.Query>` object
         :return: The results of the query
         :rtype: list
         """

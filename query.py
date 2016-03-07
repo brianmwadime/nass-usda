@@ -25,7 +25,7 @@ class Query(object):
         return self
 
     def count(self):
-        """Pass count request to :class:`NassApi <nass.api.NassApi>`.
+        """Pass count request to :class:`USDAApi <nassusda.api.USDAApi>`.
         :return: The number of rows in the result
         """
         return self.api.count_query(self)
