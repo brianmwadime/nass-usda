@@ -14,7 +14,7 @@ class USDAApi(object):
       >>> api = USDAApi('APIKEY')
     """
 
-    BASE_URL = 'http://quickstats.nass.usda.gov/api'
+    BASE_URL = 'https://quickstats.nass.usda.gov/api'
 
     def __init__(self, key):
         self.key = key
