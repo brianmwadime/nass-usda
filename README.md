@@ -16,7 +16,7 @@ Usage
     >>> q.execute()
     [{'sector_desc': 'CROPS', ...}, ...]
 
-See http://quickstats.nass.usda.gov/ for the full list of fields.
+See https://quickstats.nass.usda.gov/ for the full list of fields.
 
 Exceptions
 ----------
